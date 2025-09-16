@@ -2,6 +2,10 @@
   display: block;
 }
 
+.contact-page {
+  padding-top: clamp(150px, 22vw, 220px);
+}
+
 .contact-layout {
   margin-top: 1rem;
   align-items: start;
@@ -75,6 +79,10 @@
 }
 
 @media (max-width: 780px) {
+  .contact-page {
+    padding-top: 130px;
+  }
+
   .contact-layout {
     margin-top: 1.5rem;
   }
