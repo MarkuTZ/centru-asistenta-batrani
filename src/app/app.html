@@ -1,18 +1,27 @@
 <header class="site-header">
   <div class="container bar">
-    <a class="brand" routerLink="/acasa">People for People</a>
-    <nav>
-      <a routerLink="/acasa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-        >Acasă</a
-      >
+    <div class="brand-wrap">
+      <a class="brand-xl" routerLink="/acasa" aria-label="Acasă">
+        <img class="brand-logo-xl" src="/img/logo.png" alt="Asociația People for People - logo"/>
+      </a>
+
+      <div class="header-contacts">
+        <a class="tel" href="tel:+40338405999">0338&nbsp;405&nbsp;999</a>
+        <a class="tel" href="tel:+40774680740">0774&nbsp;680&nbsp;740</a>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a routerLink="/acasa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Acasă</a>
       <a routerLink="/despre-noi" routerLinkActive="active">Despre noi</a>
       <a routerLink="/contact" routerLinkActive="active" class="btn btn--primary">Contact</a>
     </nav>
   </div>
 </header>
 
+
 <main>
-  <router-outlet />
+  <router-outlet/>
 </main>
 
 <footer class="site-footer">
