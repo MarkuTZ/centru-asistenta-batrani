@@ -45,6 +45,11 @@
   box-shadow: var(--shadow);
 }
 
+.main-nav a,
+.tel {
+  font-family: var(--font-sans), sans-serif;
+}
+
 .header-contacts {
   display: flex;
   gap: 8px;
@@ -59,12 +64,17 @@
   font-weight: 700;
   text-decoration: none;
   line-height: 1;
-  font-family: var(--font-sans);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tel:hover {
   background: var(--accent);
   color: #111;
+}
+
+.tel:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
 }
 
 /* navigația rămâne la dreapta */
@@ -74,10 +84,22 @@
   margin-left: 18px;
   padding: 6px 8px;
   border-radius: 8px;
+  opacity: 0.95;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 .main-nav a.active {
   background: rgba(255, 255, 255, .18);
+}
+
+.main-nav a:hover {
+  opacity: 1;
+}
+
+.main-nav a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+  opacity: 1;
 }
 
 /* pe mobil, ascundem telefoanele ca să nu aglomerăm header-ul */
@@ -85,4 +107,11 @@
   .header-contacts {
     display: none;
   }
+}
+
+.site-footer {
+  background: var(--bg-alt);
+  padding: 22px 0;
+  color: #556;
+  font-size: 0.92rem;
 }
