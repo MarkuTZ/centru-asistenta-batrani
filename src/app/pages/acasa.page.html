@@ -1,8 +1,15 @@
 <!-- HERO cu imagine și text scurt -->
 <section class="hero">
   <div class="container hero__inner">
-    <h1>Bine ați venit la Centrul de Îngrijire și Asistență pentru Persoane Adulte cu Dizabilități "People for
-      People" </h1>
+    <p class="hero__kicker">Bine ați venit alături de noi!</p>
+    <h1>
+      Bine ați venit la Centrul de Îngrijire și Asistență pentru Persoane Adulte cu Dizabilități "People for
+      People"
+    </h1>
+    <p class="lead hero__intro">
+      Suntem un centru rezidențial acreditat care oferă îngrijire specializată și susținere continuă adulților cu
+      dizabilități și familiilor lor.
+    </p>
     <p class="lead">
       La centrul nostru, fiecare persoană contează. Oferim un mediu sigur, prietenos și adaptat nevoilor individuale, în
       care adulții cu dizabilități beneficiază de îngrijire, respect și sprijin continuu.
@@ -17,6 +24,11 @@
       vieții, transformăm centrul într-un loc unde fiecare adult se simte respectat, încurajat și parte dintr-o
       comunitate.
     </p>
+    <ul class="hero__highlights" aria-label="Serviciile esențiale pe care le oferim">
+      <li>Îngrijire personalizată și monitorizare medicală pentru fiecare beneficiar.</li>
+      <li>Activități terapeutice și de socializare adaptate nivelului fiecărei persoane.</li>
+      <li>Comunicare constantă cu familia și sprijin în relația cu instituțiile partenere.</li>
+    </ul>
     <div class="hero__actions">
       <a routerLink="/contact" class="btn btn--primary">Programează o vizită</a>
       <a routerLink="/despre-noi" class="btn btn--ghost">Despre noi</a>
@@ -49,23 +61,64 @@
   </div>
 </section>
 
-<!-- Mică galerie (pozele clientului) -->
-<section class="section">
+<!-- Galerie foto cu slideshow -->
+<section class="section home-carousel">
   <div class="container">
-    <div class="grid grid--3 home-gallery">
-      <img
-        src="/img/care-01.jpg"
-        alt="Îngrijire într-un mediu cald"
-        loading="lazy"
-        decoding="async"
-      />
-      <img
-        src="/img/care-02.jpg"
-        alt="Activități și suport pentru mobilitate"
-        loading="lazy"
-        decoding="async"
-      />
-      <img src="/img/care-04.jpg" alt="Respect și compasiune" loading="lazy" decoding="async"/>
+    <div class="home-carousel__header">
+      <h2>Momente din centrul nostru</h2>
+      <p class="lead">
+        Un colț vizual din viața People for People: activități, terapie și sprijinul pe care îl oferim zi de zi.
+      </p>
+    </div>
+
+    <div
+      class="home-carousel__wrapper"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Galerie foto People for People"
+    >
+      <button
+        type="button"
+        class="home-carousel__control home-carousel__control--prev"
+        (click)="previousSlide()"
+        aria-label="Imaginea anterioară"
+      >
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      <div class="home-carousel__viewport" aria-live="polite">
+        <div class="home-carousel__track" [style.transform]="carouselTransform">
+          <figure
+            class="home-carousel__slide"
+            *ngFor="let slide of slides; let i = index"
+            [class.home-carousel__slide--active]="i === currentSlide"
+          >
+            <img [src]="slide.src" [alt]="slide.alt" loading="lazy" decoding="async" />
+            <figcaption>{{ slide.caption }}</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="home-carousel__control home-carousel__control--next"
+        (click)="nextSlide()"
+        aria-label="Imaginea următoare"
+      >
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    <div class="home-carousel__dots" role="group" aria-label="Selectează imaginea din carusel">
+      <button
+        *ngFor="let slide of slides; let i = index"
+        type="button"
+        class="home-carousel__dot"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Afișează imaginea ' + (i + 1)"
+        [attr.aria-pressed]="i === currentSlide"
+        [class.home-carousel__dot--active]="i === currentSlide"
+      ></button>
     </div>
   </div>
 </section>
