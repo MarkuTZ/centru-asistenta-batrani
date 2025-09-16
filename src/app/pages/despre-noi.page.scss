@@ -1,0 +1,134 @@
+:host {
+  display: block;
+  --about-hero-image: url('/img/care-03.jpg');
+}
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  color: #0f172a;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.92)
+    ),
+    var(--about-hero-image) center/cover no-repeat;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding-top: clamp(180px, 28vw, 240px);
+    padding-bottom: clamp(70px, 18vw, 130px);
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  &__kicker {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .lead {
+    color: #334155;
+  }
+}
+
+.about-story__content,
+.about-mission__mission {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.about-story__highlights {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-story__highlights ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.about-story__highlights li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: #1f2937;
+}
+
+.about-story__highlights li::before {
+  content: '';
+  position: absolute;
+  top: 0.45rem;
+  left: 0.25rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(251, 192, 45, 0.25);
+}
+
+.about-story__highlights strong {
+  color: var(--primary-700);
+}
+
+.about-values__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.about-values__list li {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  color: #1f2937;
+}
+
+.about-values__list strong {
+  display: block;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+  color: var(--primary-700);
+}
+
+.about-team {
+  background: #fff;
+}
+
+.about-team .lead {
+  max-width: 760px;
+  margin-bottom: 1.5rem;
+}
+
+.about-team__grid {
+  margin-top: 1rem;
+}
+
+.about-team__grid .card {
+  display: grid;
+  gap: 0.5rem;
+  padding: 24px;
+}
+
+.about-team__collaboration {
+  background: var(--bg-brand);
+  border: 1px solid rgba(26, 188, 156, 0.15);
+}
+
+@media (max-width: 780px) {
+  .about-hero__inner {
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+}
