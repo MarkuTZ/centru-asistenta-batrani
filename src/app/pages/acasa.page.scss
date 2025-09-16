@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #0f172a;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.95)
+    ),
+    url('/img/hero.jpg') center/cover no-repeat;
+
+  &__inner {
+    padding-top: clamp(140px, 25vw, 220px);
+    padding-bottom: clamp(40px, 12vw, 80px);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.reasons-grid {
+  margin-top: 1rem;
+}
+
+.home-gallery {
+  margin-top: 1rem;
+
+  img {
+    width: 100%;
+    height: clamp(200px, 32vw, 260px);
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+}
+
+.cta__actions {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 599px) {
+  .hero__inner {
+    padding-top: 120px;
+  }
+}
