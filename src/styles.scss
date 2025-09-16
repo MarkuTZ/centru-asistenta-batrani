@@ -1,99 +1,192 @@
+/* ===== Design tokens ===== */
 :root {
-  --turcoaz: #1ABC9C; /* sau #40C4C4 – ambele sunt in brief */
-  --alb: #ffffff;
-  --gri-deschis: #F5F5F5;
-  --text: #333333;
-  --accent: #FBC02D; /* alternativ #FFA726 */
+  --primary: #1ABC9C; /* turcoaz */
+  --primary-700: #16A085;
+  --accent: #FBC02D; /* accent cald */
+  --bg: #ffffff;
+  --bg-alt: #F7FAFC; /* gri foarte deschis */
+  --bg-brand: #ECFFFA; /* turcoaz foarte diluat */
+  --text: #222;
+  --muted: #6B7280;
+  --shadow: 0 6px 24px rgba(0, 0, 0, .08);
+  --radius: 14px;
 }
 
+/* ===== Reseturi scurte ===== */
 * {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background: var(--alb);
+  background: var(--bg);
 }
 
+/* ===== Layout util ===== */
 .container {
-  max-width: 1080px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px;
-}
-
-.site-header {
-  background: var(--turcoaz);
-  color: var(--alb);
-}
-
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-}
-
-.site-header a {
-  color: var(--alb);
-  text-decoration: none;
-  margin-right: 16px;
-}
-
-.site-header .brand {
-  font-weight: 700;
-  letter-spacing: .2px;
-  margin-right: 24px;
-}
-
-nav a.active {
-  text-decoration: underline;
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #111;
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 0 18px;
 }
 
 .section {
-  padding: 48px 0;
+  padding: clamp(40px, 6vw, 80px) 0;
 }
 
-.section.alt {
-  background: var(--gri-deschis);
+.section--alt {
+  background: var(--bg-alt);
 }
 
-.lead {
-  font-size: 1.15rem;
-  line-height: 1.6;
+.section--brand {
+  background: var(--bg-brand);
 }
 
 .grid {
   display: grid;
-  gap: 20px;
+  gap: 22px;
 }
 
-.grid.cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.grid--2 {
+  grid-template-columns: 1fr;
 }
 
+.grid--3 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 780px) {
+  .grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Tipografie ===== */
+h1 {
+  font-size: clamp(28px, 3.2vw, 42px);
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  margin: 0 0 12px;
+}
+
+.lead {
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ===== Card & butoane ===== */
 .card {
-  background: var(--alb);
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
 }
 
+.btn--primary {
+  background: var(--accent);
+  color: #111;
+}
+
+.btn--ghost {
+  border-color: #ddd;
+  color: #222;
+  background: #fff;
+}
+
+/* ===== Header sticky curat ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+}
+
+.site-header .bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 18px;
+  padding: 6px 4px;
+  border-radius: 8px;
+  opacity: .95;
+}
+
+nav a.active {
+  background: rgba(255, 255, 255, .18);
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #0f172a;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, .65), rgba(255, 255, 255, .95)), url('/public/img/hero.jpg') center/cover no-repeat;
+}
+
+.hero .inner {
+  padding: clamp(48px, 8vw, 120px) 0;
+}
+
+.hero p {
+  max-width: 70ch;
+}
+
+/* ===== Imagery ===== */
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ===== Footer ===== */
 .site-footer {
-  margin-top: 48px;
-  background: var(--gri-deschis);
-  padding: 18px 0;
-}
-
-.small {
-  font-size: .9rem;
-  color: #555;
+  background: var(--bg-alt);
+  padding: 22px 0;
+  color: #556;
+  font-size: .92rem;
 }

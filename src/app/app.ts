@@ -9,5 +9,5 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('centru-asistenta-batrani');
-  protected readonly Date = Date;
+  readonly year = new Date().getFullYear();
 }
