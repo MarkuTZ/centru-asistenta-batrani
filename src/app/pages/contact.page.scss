@@ -13,6 +13,12 @@
 
 .contact-details {
   margin-bottom: 1.25rem;
+
+  .small {
+    margin-top: 0.25rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
 }
 
 .contact-form {
