@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.facilities-hero {
+  background: linear-gradient(180deg, rgba(26, 188, 156, 0.08) 0%, rgba(255, 255, 255, 0.95) 70%);
+
+  &__inner {
+    padding: 150px 18px 80px;
+  }
+
+  &__kicker {
+    display: inline-block;
+    background: rgba(26, 188, 156, 0.12);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+  }
+}
+
+.facilities-grid {
+  gap: clamp(16px, 3vw, 26px);
+
+  ul {
+    padding-left: 18px;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
