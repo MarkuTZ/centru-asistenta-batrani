@@ -11,15 +11,13 @@
       to bottom,
       rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.92)
-    ),
-    var(--about-hero-image) center/cover no-repeat;
+  ),
+  var(--about-hero-image) center/cover no-repeat;
 
   &__inner {
     position: relative;
     z-index: 1;
-    max-width: 720px;
-    padding-top: clamp(180px, 28vw, 240px);
-    padding-bottom: clamp(70px, 18vw, 130px);
+    padding: 150px 18px 80px;
     display: grid;
     gap: 0.75rem;
   }

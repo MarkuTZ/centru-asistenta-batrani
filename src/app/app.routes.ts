@@ -13,7 +13,11 @@ export const routes: Routes = [
   { path: 'despre-noi', component: DespreNoiPage, title: 'People for People – Despre noi' },
   { path: 'servicii', component: ServiciiPage, title: 'People for People – Servicii' },
   { path: 'facilitati', component: FacilitatiPage, title: 'People for People – Facilități' },
-  { path: 'informatii-utile', component: InformatiiUtilePage, title: 'People for People – Informații utile' },
+  {
+    path: 'informatii-utile',
+    component: InformatiiUtilePage,
+    title: 'People for People – Informații utile',
+  },
   { path: 'contact', component: ContactPage, title: 'People for People – Contact' },
   { path: '**', redirectTo: 'acasa' },
 ];

@@ -19,17 +19,20 @@ export class AcasaPage {
     {
       src: '/img/care-02.jpg',
       alt: 'Specialist care ajută un beneficiar cu exerciții de mobilitate',
-      caption: 'Programele de recuperare sunt adaptate nivelului de mobilitate și obiectivelor fiecărui beneficiar.',
+      caption:
+        'Programele de recuperare sunt adaptate nivelului de mobilitate și obiectivelor fiecărui beneficiar.',
     },
     {
       src: '/img/care-04.jpg',
       alt: 'Beneficiari care participă la o activitate de socializare',
-      caption: 'Activitățile de socializare creează prietenii și un sentiment puternic de comunitate.',
+      caption:
+        'Activitățile de socializare creează prietenii și un sentiment puternic de comunitate.',
     },
     {
       src: '/img/illustration-01.jpg',
       alt: 'Ilustrație cu persoane care se bucură de sprijin din partea echipei People for People',
-      caption: 'Împreună cu familiile construim un plan de îngrijire echilibrat și plin de empatie.',
+      caption:
+        'Împreună cu familiile construim un plan de îngrijire echilibrat și plin de empatie.',
     },
   ];
 

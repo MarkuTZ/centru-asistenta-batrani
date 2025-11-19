@@ -4,9 +4,11 @@
 
 .facilities-hero {
   background: linear-gradient(180deg, rgba(26, 188, 156, 0.08) 0%, rgba(255, 255, 255, 0.95) 70%);
+
   &__inner {
-    padding: clamp(96px, 19vw, 170px) 0 clamp(36px, 9vw, 68px);
+    padding: 150px 18px 80px;
   }
+
   &__kicker {
     display: inline-block;
     background: rgba(26, 188, 156, 0.12);
@@ -16,12 +18,6 @@
     text-transform: uppercase;
     letter-spacing: 0.02em;
     margin: 0 0 12px;
-  }
-}
-
-@media (max-width: 700px) {
-  .facilities-hero__inner {
-    padding: 84px 0 48px;
   }
 }
 

@@ -4,9 +4,11 @@
 
 .info-hero {
   background: linear-gradient(180deg, rgba(251, 192, 45, 0.08), rgba(255, 255, 255, 0.95));
+
   &__inner {
-    padding: clamp(96px, 19vw, 168px) 0 clamp(32px, 8vw, 64px);
+    padding: 150px 18px 80px;
   }
+
   &__kicker {
     display: inline-block;
     background: rgba(251, 192, 45, 0.2);
@@ -20,12 +22,6 @@
   }
 }
 
-@media (max-width: 700px) {
-  .info-hero__inner {
-    padding: 82px 0 46px;
-  }
-}
-
 .info-content {
   gap: clamp(16px, 3vw, 28px);
   align-items: start;
@@ -34,6 +30,7 @@
 .info-card {
   display: grid;
   gap: 6px;
+  margin-bottom: 16px;
 }
 
 .info-sidebar {
