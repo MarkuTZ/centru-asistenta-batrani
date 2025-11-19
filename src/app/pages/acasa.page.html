@@ -93,7 +93,7 @@
             *ngFor="let slide of slides; let i = index"
             [class.home-carousel__slide--active]="i === currentSlide"
           >
-            <img [src]="slide.src" [alt]="slide.alt" loading="lazy" decoding="async" />
+            <img [src]="slide.src" [alt]="slide.alt" loading="lazy" decoding="async"/>
             <figcaption>{{ slide.caption }}</figcaption>
           </figure>
         </div>

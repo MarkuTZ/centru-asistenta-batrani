@@ -1,0 +1,59 @@
+:host {
+  display: block;
+}
+
+.info-hero {
+  background: linear-gradient(180deg, rgba(251, 192, 45, 0.08), rgba(255, 255, 255, 0.95));
+
+  &__inner {
+    padding: 150px 18px 80px;
+  }
+
+  &__kicker {
+    display: inline-block;
+    background: rgba(251, 192, 45, 0.2);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+    color: #7a5f00;
+  }
+}
+
+.info-content {
+  gap: clamp(16px, 3vw, 28px);
+  align-items: start;
+}
+
+.info-card {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.info-sidebar {
+  display: grid;
+  gap: 16px;
+}
+
+.tips-list,
+.resources ul {
+  padding-left: 18px;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.resources ul {
+  list-style: disc;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
