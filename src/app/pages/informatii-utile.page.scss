@@ -5,7 +5,7 @@
 .info-hero {
   background: linear-gradient(180deg, rgba(251, 192, 45, 0.08), rgba(255, 255, 255, 0.95));
   &__inner {
-    padding: clamp(110px, 20vw, 180px) 0 clamp(36px, 9vw, 72px);
+    padding: clamp(96px, 19vw, 168px) 0 clamp(32px, 8vw, 64px);
   }
   &__kicker {
     display: inline-block;
@@ -17,6 +17,12 @@
     letter-spacing: 0.02em;
     margin: 0 0 12px;
     color: #7a5f00;
+  }
+}
+
+@media (max-width: 700px) {
+  .info-hero__inner {
+    padding: 82px 0 46px;
   }
 }
 
