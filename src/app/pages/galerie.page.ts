@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 
 interface GalleryImage {
@@ -8,11 +8,11 @@ interface GalleryImage {
 }
 
 const galleryFiles = import.meta.glob<string>(
-  '../../../public/img/gallery/*.{jpg,jpeg,png,webp,avif,gif}',
+  '../../../public/img/gallery/*.{jpg,JPG,jpeg,png,webp,avif,gif}',
   {
     eager: true,
     import: 'default',
-  }
+  },
 ) satisfies Record<string, string>;
 
 const galleryImages = Object.entries(galleryFiles)
@@ -26,7 +26,7 @@ const galleryImages = Object.entries(galleryFiles)
 @Component({
   selector: 'app-galerie',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './galerie.page.html',
   styleUrl: './galerie.page.scss',
 })
