@@ -6,6 +6,7 @@ import { ContactPage } from './pages/contact.page';
 import { ServiciiPage } from './pages/servicii.page';
 import { InformatiiUtilePage } from './pages/informatii-utile.page';
 import { FacilitatiPage } from './pages/facilitati.page';
+import { GaleriePage } from './pages/galerie.page';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'acasa', pathMatch: 'full' },
@@ -13,6 +14,7 @@ export const routes: Routes = [
   { path: 'despre-noi', component: DespreNoiPage, title: 'People for People – Despre noi' },
   { path: 'servicii', component: ServiciiPage, title: 'People for People – Servicii' },
   { path: 'facilitati', component: FacilitatiPage, title: 'People for People – Facilități' },
+  { path: 'galerie', component: GaleriePage, title: 'People for People – Galerie foto' },
   {
     path: 'informatii-utile',
     component: InformatiiUtilePage,
