@@ -15,8 +15,8 @@ main {
   z-index: 20;
   background: var(--primary);
   color: #fff;
-  --brand-logo-size: 72px;
-  --brand-logo-padding: 10px;
+  --brand-logo-size: 150px;
+  --brand-logo-padding: 0px;
   --brand-logo-radius: 16px;
   --nav-toggle-gap: 10px;
   --nav-toggle-padding: 9px 12px;
@@ -31,7 +31,7 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 10px 0;
+  padding: 10px 10px;
   min-height: 68px;
   position: relative;
 }
@@ -177,8 +177,7 @@ main {
   }
 
   .site-header {
-    --brand-logo-size: 86px;
-    --brand-logo-padding: 12px;
+    --brand-logo-size: 100px;
     --nav-toggle-padding: 10px 12px;
     --nav-toggle-icon-width: 24px;
     --nav-toggle-icon-thickness: 2px;
