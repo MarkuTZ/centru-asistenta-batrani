@@ -2,10 +2,6 @@
   <div class="container bar">
     <a class="brand" routerLink="/acasa" aria-label="Acasă">
       <img class="brand-logo" src="/img/logo.png" alt="Asociația People for People - logo"/>
-      <span class="brand-text">
-        <span class="brand-text__name">People for People</span>
-        <span class="brand-text__tagline">Centru de îngrijire</span>
-      </span>
     </a>
 
     <div class="header-actions">
@@ -14,13 +10,25 @@
         <a class="tel" href="tel:+40774680740">0774&nbsp;680&nbsp;740</a>
       </div>
 
-      <nav class="main-nav">
-        <a routerLink="/acasa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Acasă</a>
-        <a routerLink="/despre-noi" routerLinkActive="active">Despre noi</a>
-        <a routerLink="/servicii" routerLinkActive="active">Servicii</a>
-        <a routerLink="/facilitati" routerLinkActive="active">Facilități</a>
-        <a routerLink="/informatii-utile" routerLinkActive="active">Informații utile</a>
-        <a routerLink="/contact" routerLinkActive="active" class="btn btn--primary">Contact</a>
+      <button
+        type="button"
+        class="nav-toggle"
+        (click)="toggleMenu()"
+        aria-label="Deschide meniul principal"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="main-nav"
+      >
+        <span class="nav-toggle__icon" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Meniu</span>
+      </button>
+
+      <nav class="main-nav" [class.main-nav--open]="menuOpen()" id="main-nav">
+        <a routerLink="/acasa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Acasă</a>
+        <a routerLink="/despre-noi" routerLinkActive="active" (click)="closeMenu()">Despre noi</a>
+        <a routerLink="/servicii" routerLinkActive="active" (click)="closeMenu()">Servicii</a>
+        <a routerLink="/facilitati" routerLinkActive="active" (click)="closeMenu()">Facilități</a>
+        <a routerLink="/informatii-utile" routerLinkActive="active" (click)="closeMenu()">Informații utile</a>
+        <a routerLink="/contact" routerLinkActive="active" class="btn btn--primary" (click)="closeMenu()">Contact</a>
       </nav>
     </div>
   </div>
