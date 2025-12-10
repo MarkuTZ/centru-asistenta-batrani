@@ -10,4 +10,14 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('centru-asistenta-batrani');
   readonly year = new Date().getFullYear();
+
+  protected readonly menuOpen = signal(false);
+
+  toggleMenu(): void {
+    this.menuOpen.update((open) => !open);
+  }
+
+  closeMenu(): void {
+    this.menuOpen.set(false);
+  }
 }
