@@ -7,18 +7,17 @@
       primitoare ale centrului. Vizualizează imagini din sălile comune, curtea verde și interacțiunile
       dintre rezidenți și echipa noastră.
     </p>
-    <p class="gallery-hero__hint">45 de fotografii selectate cu grijă</p>
+    <p class="gallery-hero__hint">{{ totalImages }} fotografii încărcate automat</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
     <div class="gallery-grid">
-      <figure class="gallery-card" *ngFor="let image of galleryImages">
+      <figure class="gallery-card" *ngFor="let image of galleryImages" [attr.aria-label]="image.alt">
         <img [src]="image.src" [alt]="image.alt" loading="lazy" class="gallery-card__image" />
         <figcaption class="gallery-card__caption">
           <span class="gallery-card__badge">#{{ image.id }}</span>
-          <span>{{ image.alt }}</span>
         </figcaption>
       </figure>
     </div>
