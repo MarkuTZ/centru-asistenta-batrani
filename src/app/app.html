@@ -14,13 +14,18 @@
         <a class="tel" href="tel:+40774680740">0774&nbsp;680&nbsp;740</a>
       </div>
 
-      <nav class="main-nav">
-        <a routerLink="/acasa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Acasă</a>
-        <a routerLink="/despre-noi" routerLinkActive="active">Despre noi</a>
-        <a routerLink="/servicii" routerLinkActive="active">Servicii</a>
-        <a routerLink="/facilitati" routerLinkActive="active">Facilități</a>
-        <a routerLink="/informatii-utile" routerLinkActive="active">Informații utile</a>
-        <a routerLink="/contact" routerLinkActive="active" class="btn btn--primary">Contact</a>
+      <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen()" aria-controls="main-navigation">
+        <span class="menu-toggle__icon" aria-hidden="true"><span></span></span>
+        <span class="menu-toggle__label">Meniu</span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" [class.open]="isMenuOpen()">
+        <a routerLink="/acasa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Acasă</a>
+        <a routerLink="/despre-noi" routerLinkActive="active" (click)="closeMenu()">Despre noi</a>
+        <a routerLink="/servicii" routerLinkActive="active" (click)="closeMenu()">Servicii</a>
+        <a routerLink="/facilitati" routerLinkActive="active" (click)="closeMenu()">Facilități</a>
+        <a routerLink="/informatii-utile" routerLinkActive="active" (click)="closeMenu()">Informații utile</a>
+        <a routerLink="/contact" routerLinkActive="active" class="btn btn--primary" (click)="closeMenu()">Contact</a>
       </nav>
     </div>
   </div>
