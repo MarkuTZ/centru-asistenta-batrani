@@ -1,0 +1,26 @@
+<section class="gallery-hero">
+  <div class="container gallery-hero__inner">
+    <p class="gallery-hero__kicker">Galerie foto</p>
+    <h1>Momente surprinse în centrul People for People</h1>
+    <p class="lead">
+      O colecție de instantanee care surprind atmosfera caldă, activitățile zilnice și spațiile
+      primitoare ale centrului. Vizualizează imagini din sălile comune, curtea verde și interacțiunile
+      dintre rezidenți și echipa noastră.
+    </p>
+    <p class="gallery-hero__hint">45 de fotografii selectate cu grijă</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="gallery-grid">
+      <figure class="gallery-card" *ngFor="let image of galleryImages">
+        <img [src]="image.src" [alt]="image.alt" loading="lazy" class="gallery-card__image" />
+        <figcaption class="gallery-card__caption">
+          <span class="gallery-card__badge">#{{ image.id }}</span>
+          <span>{{ image.alt }}</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
