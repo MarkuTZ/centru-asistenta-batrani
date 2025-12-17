@@ -16,13 +16,12 @@
     <div class="gallery-grid">
       <figure class="gallery-card" *ngFor="let image of galleryImages" [attr.aria-label]="image.alt">
         <img
-          [ngSrc]="image.optimizedSrc"
+          [ngSrc]="image.src"
           [alt]="image.alt"
           loading="lazy"
           width="1600"
           height="1200"
           class="gallery-card__image"
-          (error)="swapToOriginal($event, image)"
         />
         <figcaption class="gallery-card__caption">
           <span class="gallery-card__badge">#{{ image.id }}</span>
