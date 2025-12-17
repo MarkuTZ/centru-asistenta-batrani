@@ -1,5 +1,6 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
+import { GALLERY_ASSETS } from './gallery-assets';
 
 interface GalleryImage {
   src: string;
@@ -7,21 +8,11 @@ interface GalleryImage {
   id: number;
 }
 
-const galleryFiles = import.meta.glob<string>(
-  '../../../public/img/gallery/*.{jpg,JPG,jpeg,png,webp,avif,gif}',
-  {
-    eager: true,
-    import: 'default',
-  },
-) satisfies Record<string, string>;
-
-const galleryImages = Object.entries(galleryFiles)
-  .sort(([a], [b]) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
-  .map(([, src], index) => ({
-    src,
-    id: index + 1,
-    alt: `Fotografie din galeria centrului #${index + 1}`,
-  })) satisfies GalleryImage[];
+const galleryImages = GALLERY_ASSETS.map((asset, index) => ({
+  src: `/img/gallery/${asset.fileName}`,
+  id: index + 1,
+  alt: asset.alt,
+} satisfies GalleryImage));
 
 @Component({
   selector: 'app-galerie',
