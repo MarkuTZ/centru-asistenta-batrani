@@ -20,7 +20,6 @@ export class AcasaPage {
   readonly slides = this.galleryImageNames.map((imageName, index) => ({
     src: `/img/gallery/${imageName}`,
     alt: `Fotografie ${index + 1} din galeria People for People`,
-    caption: `Moment ${index + 1} din galeria centrului.`,
   }));
 
   currentSlide = 0;
