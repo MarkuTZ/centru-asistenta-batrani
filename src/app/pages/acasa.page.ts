@@ -11,10 +11,10 @@ import { RouterLink } from '@angular/router';
 })
 export class AcasaPage {
   private readonly galleryImageNames = [
-    'IMG (10).jpg',
-    'IMG (12).jpg',
-    'IMG (14).jpg',
-    'IMG (22).JPG',
+    'IMG (36).jpg',
+    'IMG (46).jpg',
+    'IMG (63).jpg',
+    'IMG (87).jpg',
   ];
 
   readonly slides = this.galleryImageNames.map((imageName, index) => ({
