@@ -21,6 +21,18 @@
   }
 }
 
+.contact-logo {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: var(--primary);
+
+  img {
+    width: min(260px, 100%);
+    height: auto;
+  }
+}
+
 .contact-form {
   display: grid;
   gap: 0.75rem;
